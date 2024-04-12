@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="urgency" label="Urgency" language="en" table="x_1329796_needit_needit">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>urgency</element>
+            <help/>
+            <hint/>
+            <label>Urgency</label>
+            <language>en</language>
+            <name>x_1329796_needit_needit</name>
+            <plural>Urgencies</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-04-11 06:07:01</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Urgency</sys_name>
+            <sys_package display_value="NeedIT" source="x_1329796_needit">1487b070932102102dbcf1ccebba1044</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="NeedIT">1487b070932102102dbcf1ccebba1044</sys_scope>
+            <sys_update_name>sys_documentation_x_1329796_needit_needit_urgency_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-04-11 06:07:01</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

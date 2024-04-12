@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8397f074932102102dbcf1ccebba100e" label="NeedIT" max_length="40" name="x_1329796_needit_needit" type="collection">
+        <element attributes="encode_utf8=false" dependent="assignment_group" dependent_on_field="assignment_group" label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element label="Assignment Group" max_length="32" name="assignment_group" reference="sys_user_group" type="reference"/>
+        <element choice="1" label="Close Code" max_length="40" name="close_code" type="choice">
+            <choice/>
+        </element>
+        <element label="Close Notes" max_length="40" name="close_notes" type="string"/>
+        <element label="Description" max_length="40" name="description" type="string"/>
+        <element choice="3" default="3" label="Impact" max_length="40" name="impact" type="integer">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Low" sequence="1" value="3"/>
+                <element inactive_on_update="false" label="Medium" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;var a = 3;&#13;&#10;&#9;var b = 3;&#13;&#10;&#9;a = current.impact;&#13;&#10;&#9;b = current.urgency;&#13;&#10;&#9;return a+b-1;  // return the calculated value&#13;&#10;&#13;&#10;})(current);" choice="3" default="5" label="Priority" max_length="40" name="priority" read_only="true" type="integer" virtual="true">
+            <choice>
+                <element inactive_on_update="false" label="Critical" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="High" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Low" sequence="2" value="4"/>
+                <element inactive_on_update="false" label="Moderate" sequence="3" value="3"/>
+                <element inactive_on_update="false" label="Planning" sequence="4" value="5"/>
+            </choice>
+        </element>
+        <element label="Requested for" max_length="32" name="requested_for" reference="imp_user" type="reference"/>
+        <element choice="1" label="Resolution Code" max_length="40" name="resolution_code" type="choice">
+            <choice/>
+        </element>
+        <element label="Resolution Notes" max_length="40" name="resolution_notes" type="string"/>
+        <element label="Short Description" max_length="40" name="short_description" type="string"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice/>
+        </element>
+        <element choice="3" default="3" label="Urgency" max_length="40" name="urgency" type="integer">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Low" sequence="1" value="3"/>
+                <element inactive_on_update="false" label="Medium" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element label="Watch list" max_length="4000" name="watch_list" type="glide_list"/>
+        <element choice="1" label="What Needed" max_length="40" name="what_needed" type="choice">
+            <choice>
+                <element inactive="true" inactive_on_update="true" label="Clarity" sequence="0" value="3"/>
+                <element inactive="true" inactive_on_update="true" label="CoreDB" sequence="1" value="2"/>
+                <element inactive="true" inactive_on_update="true" label="Nodepad" sequence="2" value="1"/>
+            </choice>
+        </element>
+        <element label="When Needed" max_length="40" name="when_needed" type="glide_date_time"/>
+        <element attributes="encode_utf8=false" label="Workflow Activity" max_length="32" name="workflow_activity" reference="wf_activity" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Work Notes" max_length="4000" name="work_notes" type="journal_input"/>
+        <element label="Work notes list" max_length="4000" name="work_notes_list" type="glide_list"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="assignment_group"/>
+        </index>
+        <index name="index3">
+            <element name="requested_for"/>
+        </index>
+        <index name="index4">
+            <element name="workflow_activity"/>
+        </index>
+    </element>
+</database>
