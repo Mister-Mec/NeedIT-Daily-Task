@@ -30,8 +30,14 @@
         </element>
         <element label="Resolution Notes" max_length="40" name="resolution_notes" type="string"/>
         <element label="Short Description" max_length="40" name="short_description" type="string"/>
-        <element choice="1" label="State" max_length="40" name="state" type="choice">
-            <choice/>
+        <element choice="3" default="1" label="State" max_length="40" name="state" read_only="true" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Closed" value="5"/>
+                <element inactive_on_update="false" label="New" value="1"/>
+                <element inactive_on_update="false" label="Pending" value="3"/>
+                <element inactive_on_update="false" label="Resolve" value="4"/>
+                <element inactive_on_update="false" label="Work in Progress" value="2"/>
+            </choice>
         </element>
         <element choice="3" default="3" label="Urgency" max_length="40" name="urgency" type="integer">
             <choice>
