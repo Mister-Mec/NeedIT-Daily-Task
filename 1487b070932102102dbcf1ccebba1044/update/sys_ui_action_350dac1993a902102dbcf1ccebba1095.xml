@@ -2,12 +2,12 @@
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name>client_server</action_name>
         <active>true</active>
-        <client>false</client>
+        <client>true</client>
         <client_script_v2><![CDATA[function onClick(g_form) {
 
 }]]></client_script_v2>
         <comments/>
-        <condition/>
+        <condition>!current.isNewRecord() &amp;&amp; current.state=='4';</condition>
         <form_action>true</form_action>
         <form_button>true</form_button>
         <form_button_v2>false</form_button_v2>
@@ -27,20 +27,26 @@
         <list_save_with_form_button>false</list_save_with_form_button>
         <list_style/>
         <messages/>
-        <name>Closed</name>
+        <name>Close</name>
         <onclick>priority()</onclick>
-        <order>100</order>
-        <script><![CDATA[// function priority(){
-// 	confirm('');
-// 	gsftSubmit(null, g_form.getFormElement(),"client_server");
-// }
-// if(typeof window == 'undefined'){
-// 	runServerSideScript();
-// }
-// function runServerSideScript(){
+        <order>1000</order>
+        <script><![CDATA[function priority(){
+	// confirm('');
+	g_form.setMandatory("close_code", true);
+	g_form.setMandatory("close_notes", true);
+	g_form.addInfoMessage("testing function");
+	g_form.setValue('state',5);
+	gsftSubmit(null, g_form.getFormElement(),"client_server");
+}
+if(typeof window == 'undefined'){
+	runServerSideScript();
+}
+function runServerSideScript(){
 	current.state = 'Closed';
+	// gs.addErrorMessage('yes! it is running in RED');
 	current.update();
-// }
+	// action.setRedirectURL(current);
+}
 
 ]]></script>
         <show_insert>true</show_insert>
@@ -53,15 +59,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>350dac1993a902102dbcf1ccebba1095</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Closed</sys_name>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Close</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIT" source="x_1329796_needit">1487b070932102102dbcf1ccebba1044</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIT">1487b070932102102dbcf1ccebba1044</sys_scope>
         <sys_update_name>sys_ui_action_350dac1993a902102dbcf1ccebba1095</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-12 18:31:00</sys_updated_on>
+        <sys_updated_on>2024-04-23 15:29:06</sys_updated_on>
         <table>x_1329796_needit_needit</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

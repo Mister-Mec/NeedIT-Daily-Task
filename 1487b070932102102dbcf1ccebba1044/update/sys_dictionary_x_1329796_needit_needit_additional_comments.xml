@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="requested_for" table="x_1329796_needit_needit">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="additional_comments" table="x_1329796_needit_needit">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -13,7 +13,7 @@
         <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Requested for</column_label>
+        <column_label>Additional Comments</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -26,21 +26,21 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>requested_for</element>
+        <element>additional_comments</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="Journal">journal</internal_type>
         <mandatory>false</mandatory>
-        <max_length>32</max_length>
+        <max_length>4000</max_length>
         <name>x_1329796_needit_needit</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="sys_user">sys_user</reference>
+        <reference/>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -51,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2024-04-11 06:07:00</sys_created_on>
-        <sys_name>Requested for</sys_name>
+        <sys_created_on>2024-04-23 11:05:06</sys_created_on>
+        <sys_name>Additional Comments</sys_name>
         <sys_package display_value="NeedIT" source="x_1329796_needit">1487b070932102102dbcf1ccebba1044</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIT">1487b070932102102dbcf1ccebba1044</sys_scope>
-        <sys_update_name>sys_dictionary_x_1329796_needit_needit_requested_for</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1329796_needit_needit_additional_comments</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-04-22 08:47:09</sys_updated_on>
+        <sys_updated_on>2024-04-23 11:05:06</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Needit button visibility</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+  var currentUser = g_user.userID;
+  var group = g_form.getValue('assignment_group').toString();
+  var gr = new GlideRecord('sys_user_grmember');
+  gr.addQuery('user', currentUser.toString()); // replace <sys_id_user> with actual sys_id of user.
+  gr.addQuery('group', g_form.getValue('assignment_group').toString());
+  gr.query();
+  g_form.addInfoMessage(currentUser);
+  g_form.addInfoMessage(group);
+  var uiAction = g_form.getControl('client_server'); // Replace with your UI Action name
+  if(gr.next()){
+    g_form.addInfoMessage("User is Member of Group!");
+	uiAction.show();
+  }
+else{
+  g_form.addInfoMessage("User is Not a Member of Group!");
+  uiAction.hide();
+}
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-15 06:53:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>d371658e932102102dbcf1ccebba10a0</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Needit button visibility</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIT" source="x_1329796_needit">1487b070932102102dbcf1ccebba1044</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIT">1487b070932102102dbcf1ccebba1044</sys_scope>
+        <sys_update_name>sys_script_client_d371658e932102102dbcf1ccebba10a0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-15 06:58:52</sys_updated_on>
+        <table>x_1329796_needit_needit</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIT">1487b070932102102dbcf1ccebba1044</application>
+        <file_path/>
+        <instance_id>f699c1621b223150c84543f4bd4bcb83</instance_id>
+        <instance_name>dev217321</instance_name>
+        <name>sys_script_client_d371658e932102102dbcf1ccebba10a0</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Needit button visibility&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+  var currentUser = g_user.userID;
+  var group = g_form.getValue('assignment_group').toString();
+  var gr = new GlideRecord('sys_user_grmember');
+  gr.addQuery('user', currentUser.toString()); // replace &lt;sys_id_user&gt; with actual sys_id of user.
+  gr.addQuery('group', g_form.getValue('assignment_group').toString());
+  gr.query();
+  g_form.addInfoMessage(currentUser);
+  g_form.addInfoMessage(group);
+  var uiAction = g_form.getControl('client_server'); // Replace with your UI Action name
+  if(gr.next()){
+    g_form.addInfoMessage("User is Member of Group!");
+	uiAction.show();
+  }
+else{
+  g_form.addInfoMessage("User is Not a Member of Group!");
+  uiAction.hide();
+}
+
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-04-15 06:53:54&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;d371658e932102102dbcf1ccebba10a0&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Needit button visibility&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="NeedIT" source="x_1329796_needit"&gt;1487b070932102102dbcf1ccebba1044&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIT"&gt;1487b070932102102dbcf1ccebba1044&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_d371658e932102102dbcf1ccebba10a0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-04-15 06:58:52&lt;/sys_updated_on&gt;&lt;table&gt;x_1329796_needit_needit&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1903287968</payload_hash>
+        <record_name>Needit button visibility</record_name>
+        <reverted_from/>
+        <source>6d068f0593e102102dbcf1ccebba10a6</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-15 06:58:52</sys_created_on>
+        <sys_id>186b6986936102102dbcf1ccebba100f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18ee08d2ce10000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-15 06:58:52</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>dc6b6986b56102109f1837f6d4e1830e</update_guid>
+        <update_guid_history>dc6b6986b56102109f1837f6d4e1830e:-1903287968,ca7a2d861f610210ad4e097c679f13d2:-374772725,3b3a6d0ebb21021008b4f9dd064265df:780367293</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-04-15 07:01:21</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>2f72817b601c4414974a8cb7817054f9</sys_id>
+        <sys_metadata>d371658e932102102dbcf1ccebba10a0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Needit button visibility</sys_name>
+        <sys_package display_value="NeedIT" source="x_1329796_needit">1487b070932102102dbcf1ccebba1044</sys_package>
+        <sys_parent display_value="NeedIT">8397f074932102102dbcf1ccebba100e</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="NeedIT">1487b070932102102dbcf1ccebba1044</sys_scope>
+        <sys_scope_delete display_value="">1c3689f5ef72441684c2fa08dccbd8c9</sys_scope_delete>
+        <sys_update_name>sys_script_client_d371658e932102102dbcf1ccebba10a0</sys_update_name>
+        <sys_update_version display_value="sys_script_client_d371658e932102102dbcf1ccebba10a0">186b6986936102102dbcf1ccebba100f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-04-15 07:01:21</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
